@@ -67,7 +67,7 @@ public class User {
         return id;
     }
 
-    public String getloginId() {
+    public String getLoginId() {
     	return loginId;
     }
     public String getEmail() {
