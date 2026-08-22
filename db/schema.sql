@@ -1,5 +1,9 @@
 CREATE DATABASE library_db;
 USE library_db;
+DESC users;
+
+ALTER TABLE users
+ADD COLUMN login_id VARCHAR(50) NOT NULL UNIQUE AFTER id;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
