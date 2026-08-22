@@ -34,6 +34,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    // 로그인 아이
+    @Column(name = "login_id", nullable = false, unique = true, length = 50)
+    private String loginId;
+    
     // 회원번호
     @Column(nullable = false, unique = true, length = 255)
     private String email;
@@ -52,7 +56,8 @@ public class User {
     protected User() {
     }
 
-    public User(String email, String password, String name) {
+    public User(String loginId, String email, String password, String name) {
+        this.loginId = loginId;
         this.email = email;
         this.password = password;
         this.name = name;
@@ -62,6 +67,9 @@ public class User {
         return id;
     }
 
+    public String getloginId() {
+    	return loginId;
+    }
     public String getEmail() {
         return email;
     }
