@@ -1,62 +1,76 @@
 package com.library.backend.dto;
 
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Email;
 
-public class UserSignupRequest {
 
-    @NotBlank
-    @Size(min = 4, max = 50)
-    private String loginId;
+public class UserSignupRequest{
+	
+//	1. loginId 필드
+	@NotBlank
+	@Size(min = 4, max = 50)
+	private String loginId;
 
-    @NotBlank
-    @Email
-    @Size(max = 255)
-    private String email;
+//	2. email 필드
+	@Email
+	@NotBlank
+	@Size(max = 255)
+	private String email;
 
-    @NotBlank
-    @Size(min = 8, max = 100)
-    private String password;
+//	3. password 필드
+	@NotBlank
+	@Size(min = 8, max = 100)
+	private String password;
 
-    @NotBlank
-    @Size(max = 100)
-    private String name;
+//	4. name 필드
+	@NotBlank
+	@Size(max = 100)
+	private String name;
 
-    public UserSignupRequest() {
-    }
+//	5. 입력값 검증 어노테이션
+// NotBlank, Size
 
-    public String getLoginId() {
-        return loginId;
-    }
+//	6. 기본 생성자
 
-    public String getEmail() {
-        return email;
-    }
+	public UserSignupRequest() {
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	
+//	7. getter
+//	8. setter
+	public String getLoginId() {
+		return loginId;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
 
-    public void setLoginId(String loginId) {
-        this.loginId = loginId;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 }
 
-//핵심은 set은 DTO 안에 값을 넣고, get은 DTO 안의 값을 꺼내는 것입니다.
